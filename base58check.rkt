@@ -1,5 +1,6 @@
 #lang racket/base
 (require racket/list)
+(module+ test (require rackunit))
 
 (define code_string
   "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz")
@@ -49,6 +50,12 @@
   (define nb_0 (* nb_1 2))
   (define prefix (make-string nb_0 #\0))
   (string-append prefix (number->string (base58decode value) 16)))
+
+(module+ test
+  (check-equal? (base58check_encode "0049c3307695e88874509b77ff859ab10064d1cb704733eea7")
+  "17j29zgqUxMDTAgbBaZwEMFubHjnCrDpXp")
+  (check-equal? (base58check_decode "17j29zgqUxMDTAgbBaZwEMFubHjnCrDpXp")
+  "0049c3307695e88874509b77ff859ab10064d1cb704733eea7"))
 
 (provide base58check_encode
          base58check_decode)
