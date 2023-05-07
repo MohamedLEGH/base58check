@@ -25,14 +25,14 @@
 (define (base58-decode value)
   (define code-list (string->list code-string))
   (define l (string->list value))
-  (define reverse_l (reverse l))
+  (define reverse-l (reverse l))
   (define (base58dec acc power val)
     (if (equal? val '())
         acc
         (base58dec (+ (* (index-of code-list (car val)) (expt base power)) acc)
                    (+ power 1)
                    (cdr val))))
-  (base58dec 0 0 reverse_l))
+  (base58dec 0 0 reverse-l))
 
 ; input: value, type = hexastring
 ; output, type = base58 encoded string

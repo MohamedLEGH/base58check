@@ -7,8 +7,6 @@
 
 @defmodule[base58check]
 
-Package Description Here
-
 Encoding and decoding functions for the @hyperlink["https://en.bitcoin.it/wiki/Base58Check_encoding"]{Base58Check} encoding.
 
 @defproc[(base58check-encode [value string?]) string?]{
