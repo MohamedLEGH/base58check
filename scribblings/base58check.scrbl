@@ -3,7 +3,7 @@
                     racket/base]]
 
 @title{Base58Check}
-@author{(author+email "Mohamed Amine LEGHERABA" "mohamed.amine.legheraba@gmail.com")}
+@author[(author+email "Mohamedd Amine LEGHERABA" "mohamed.amine.legheraba@gmail.com")]
 
 @defmodule[base58check]
 
